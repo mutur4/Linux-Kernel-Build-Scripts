@@ -1,8 +1,6 @@
 #! /usr/bin/bash 
 
-
 BUSYBOX_VERSION=1.32.0
-
 
 init(){
         wget -q -c https://busybox.net/downloads/busybox-$BUSYBOX_VERSION.tar.bz2
