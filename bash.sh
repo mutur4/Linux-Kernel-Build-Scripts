@@ -2,7 +2,7 @@
 
 # Coompile the C script first 
 
-gcc -o chall chall.c -static -masm=intel
+gcc -o chall chall.c -static -masm=intel || exit 1
 
 # Copy this in the rootfs 
 
