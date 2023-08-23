@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-KERNEL_VERSION="5.4"
+KERNEL_VERSION="5.0"
 
 
 dependencies(){
