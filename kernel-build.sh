@@ -6,7 +6,7 @@ KERNEL_VERSION="5.4"
 dependencies(){
         printf "[+] Dependenciez Check...\n"
         command -v /usr/bin/wget > /dev/null || { printf "$(date): (wget is missing!)"; exit 1; }
-        command -v /usr/bin/tar > /dev/null  || { printf "$(date): tar reguired to proceed"; exit 1; }
+        command -v /usr/bin/tar > /dev/null  || { printf "$(date): tar required to proceed"; exit 1; }
 
         sudo apt -q update && sudo apt -q install -y bc bison flex libelf-dev cpio build-essential libssl-dev qemu-system-x86
 }
