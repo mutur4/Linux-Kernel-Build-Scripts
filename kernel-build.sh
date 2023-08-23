@@ -5,19 +5,19 @@ KERNEL_VERSION="5.4"
 
 dependencies(){
         printf "[+] Dependenciez Check...\n"
-        command -v /usr/bin/wget > /dev/null || { printf "$(date): (wget is missing!)"; exit 1; }
-        command -v /usr/bin/tar > /dev/null  || { printf "$(date): tar required to proceed"; exit 1; }
+        command -v /usr/bin/wget > /dev/null || { printf "[-] $(date): wget missing!\n"; exit 1; }
+        command -v /usr/bin/tar > /dev/null  || { printf "[-] $(date): tar command missing!\n"; exit 1; }
 
         sudo apt -q update && sudo apt -q install -y bc bison flex libelf-dev cpio build-essential libssl-dev qemu-system-x86
 }
 
 
 init(){
-        printf "Downloading Kernel...\n"
+        printf "[+] Downloading Kernel...\n"
         wget -q -c https://mirrors.edge.kernel.org/pub/linux/kernel/v5.x/linux-$KERNEL_VERSION.tar.gz
         [ -e linux-$KERNEL_VERSION.tar.gz ] && tar -xvf linux-$KERNEL_VERSION.tar.gz
 
-        printf "Building Kernel..\n"
+        printf "[+] Building Kernel..\n"
 
         make -C linux-$KERNEL_VERSION defconfig
 
