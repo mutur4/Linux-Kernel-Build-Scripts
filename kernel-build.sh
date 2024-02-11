@@ -1,5 +1,6 @@
 #! /usr/bin/bash
 
+#The specific kernel version should go here 
 KERNEL_VERSION="5.0"
 
 
@@ -14,6 +15,8 @@ dependencies(){
 
 init(){
         printf "[+] Downloading Kernel...\n"
+
+        #The following URI will differ based on the chosen Kernel Version that is described above ^^
         wget -q -c https://mirrors.edge.kernel.org/pub/linux/kernel/v5.x/linux-$KERNEL_VERSION.tar.gz
         [ -e linux-$KERNEL_VERSION.tar.gz ] && tar -xvf linux-$KERNEL_VERSION.tar.gz
 
